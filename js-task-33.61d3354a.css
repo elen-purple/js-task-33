@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Klee One, cursive;
+  font-weight: 600;
+  line-height: normal;
+}
+
+:focus {
+  outline: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  line-height: 0;
+  display: block;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: #0000;
+  border: none;
+  display: block;
+}
+
+body {
+  background-color: #d6d9d9;
+  background-image: linear-gradient(#fff6 0% 100%), url("map.2429b8b5.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: auto;
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 72px 0 48px;
+}
+
+.hero__title {
+  color: #222;
+  text-align: center;
+  margin-bottom: 44px;
+  font-size: 54px;
+  font-weight: 600;
+}
+
+.hero__form {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.hero__input {
+  color: #ed9c5c;
+  background: #fdfdfd;
+  border: none;
+  border-radius: 32px;
+  width: 540px;
+  padding: 12px 24px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.hero__input::placeholder {
+  color: #ed9c5c;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.hero__btn {
+  color: #fff;
+  text-align: center;
+  background: #ed9c5c;
+  border-radius: 0 32px 32px 0;
+  padding: 12px 24px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.category {
+  padding-bottom: 72px;
+}
+
+.category__list {
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+
+.category__item {
+  color: #222;
+  font-family: Klee One;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.category__block {
+  justify-content: center;
+  align-items: center;
+  gap: 29px;
+  display: flex;
+}
+
+.category__img {
+  object-fit: cover;
+  background-color: #ed9c5c;
+  border-radius: 32px;
+  width: 380px;
+  height: 237px;
+}
+
+.category__wrapper {
+  background: #fff;
+  border-radius: 32px;
+  width: 380px;
+  padding: 12px 24px;
+}
+
+.category__subtitle {
+  color: #ed9c5c;
+  margin-bottom: 12px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.category__infos {
+  flex-direction: column;
+  gap: 8px;
+  display: flex;
+}
+
+.category__header {
+  color: #222;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.category__span {
+  color: #ed9c5c;
+}
+
+.category__sublist {
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+  display: flex;
+}
+
+.category__subitem {
+  color: #ed9c5c;
+  font-size: 20px;
+  font-weight: 600;
+}
+/*# sourceMappingURL=js-task-33.61d3354a.css.map */
