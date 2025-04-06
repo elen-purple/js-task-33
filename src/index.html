@@ -7,6 +7,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="../node_modules/@pnotify/core/dist/PNotify.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="../node_modules/@pnotify/mobile/dist/PNotifyMobile.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap"
       rel="stylesheet"
     />
@@ -36,36 +46,33 @@
     </section>
     <section class="category">
       <h2 hidden>Category</h2>
-      <ul class="category__list">
-        <li class="category__item">Poland</li>
-        <li class="category__item">United Kingdom</li>
-        <li class="category__item">Italy</li>
-        <li class="category__item">Portugal</li>
-        <li class="category__item">United States</li>
-        <li class="category__item">Ukraine</li>
-        <li class="category__item">Serbia</li>
-        <li class="category__item">Mexico</li>
-        <li class="category__item">Brazil</li>
-        <li class="category__item">India</li>
-      </ul>
-      <div class="category__block">
-        <img src="#" alt="#" class="category__img" />
+      <p class="is-hidden category__result" id="noresult">
+        Thre are any countries like this
+      </p>
+      <p class="is-hidden category__result" id="lotresult">
+        There too many countries like this
+      </p>
+      <ul class="is-hidden category__list" id="certanly-items"></ul>
+      <div class="is-hidden category__block" id="only-item">
+        <img src="#" alt="#" id="img" class="category__img" />
         <div class="category__wrapper">
-          <h3 class="category__subtitle">Poland</h3>
+          <h3 class="category__subtitle" id="name">Poland</h3>
           <ul class="category__infos">
             <li class="category__info">
               <h4 class="category__header">
-                Capital: <span class="category__span">Varshava</span>
+                Capital:
+                <span class="category__span" id="capital">Varshava</span>
               </h4>
             </li>
             <li class="category__info">
               <h4 class="category__header">
-                Population: <span class="category__span">8341600</span>
+                Population:
+                <span class="category__span" id="population">8341600</span>
               </h4>
             </li>
             <li class="category__info">
               <h4 class="category__header">Languages:</h4>
-              <ul class="category__sublist">
+              <ul class="category__sublist" id="languages">
                 <li class="category__subitem">English</li>
                 <li class="category__subitem">Polish</li>
                 <li class="category__subitem">Portugal</li>

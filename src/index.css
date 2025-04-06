@@ -11,6 +11,10 @@ line-height: normal;
   outline: none;
 }
 
+.is-hidden{
+  display: none !important;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -102,6 +106,16 @@ body {
 }
 
 .category__item {
+  color: #222;
+  font-family: "Klee One";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.category__result {
+  text-align: center;
   color: #222;
   font-family: "Klee One";
   font-size: 32px;
