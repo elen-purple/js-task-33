@@ -3,7 +3,7 @@ import {
   defaultModules,
 } from "/node_modules/@pnotify/core/dist/PNotify.js";
 import * as PNotifyMobile from "/node_modules/@pnotify/mobile/dist/PNotifyMobile.js";
-
+import _ from "lodash";
 defaultModules.set(PNotifyMobile, {});
 
 const input = document.querySelector("#search-input");
@@ -12,39 +12,42 @@ const onlyItem = document.querySelector("#only-item");
 const lotResult = document.querySelector("#lotresult");
 const noResult = document.querySelector("#noresult");
 
-input.addEventListener("input", (e) => {
-  const userCountry = e.currentTarget.value;
-  fetch("https://restcountries.com/v3.1/all")
-    .then((resolve) => resolve.json())
-    .then((countries) => {
-      console.log(countries[0]);
-      console.log(userCountry);
-      const filteredCountries = countries.filter((country) =>
-        country.name.common.toLowerCase().includes(userCountry.toLowerCase())
-      );
-      if (filteredCountries.length > 10) {
-        setALotItems();
-      } else if (
-        filteredCountries.length <= 10 &&
-        filteredCountries.length > 1
-      ) {
-        setCertanlyItems(filteredCountries);
-      } else if (filteredCountries.length === 1) {
-        setOnlyItem(filteredCountries);
-      } else if (filteredCountries.length === 0) {
-        setNoItem();
-      }
-      if (userCountry === "") {
-        lotResult.classList.add("is-hidden");
-        noResult.classList.add("is-hidden");
-        onlyItem.classList.add("is-hidden");
-        certanlyItems.classList.add("is-hidden");
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
+input.addEventListener(
+  "input",
+  _.debounce(() => {
+    const userCountry = input.value;
+    fetch("https://restcountries.com/v3.1/all")
+      .then((resolve) => resolve.json())
+      .then((countries) => {
+        console.log(countries[0]);
+        console.log(userCountry);
+        const filteredCountries = countries.filter((country) =>
+          country.name.common.toLowerCase().includes(userCountry.toLowerCase())
+        );
+        if (filteredCountries.length > 10) {
+          setALotItems();
+        } else if (
+          filteredCountries.length <= 10 &&
+          filteredCountries.length > 1
+        ) {
+          setCertanlyItems(filteredCountries);
+        } else if (filteredCountries.length === 1) {
+          setOnlyItem(filteredCountries);
+        } else if (filteredCountries.length === 0) {
+          setNoItem();
+        }
+        if (userCountry === "") {
+          lotResult.classList.add("is-hidden");
+          noResult.classList.add("is-hidden");
+          onlyItem.classList.add("is-hidden");
+          certanlyItems.classList.add("is-hidden");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, 500)
+);
 
 function setCertanlyItems(countries) {
   lotResult.classList.add("is-hidden");
