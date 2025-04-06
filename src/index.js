@@ -3,9 +3,9 @@ import {
   defaultModules,
 } from "/node_modules/@pnotify/core/dist/PNotify.js";
 import * as PNotifyMobile from "/node_modules/@pnotify/mobile/dist/PNotifyMobile.js";
-import _ from "lodash";
 defaultModules.set(PNotifyMobile, {});
 
+import _ from "lodash";
 const input = document.querySelector("#search-input");
 const certanlyItems = document.querySelector("#certanly-items");
 const onlyItem = document.querySelector("#only-item");
@@ -19,8 +19,6 @@ input.addEventListener(
     fetch("https://restcountries.com/v3.1/all")
       .then((resolve) => resolve.json())
       .then((countries) => {
-        console.log(countries[0]);
-        console.log(userCountry);
         const filteredCountries = countries.filter((country) =>
           country.name.common.toLowerCase().includes(userCountry.toLowerCase())
         );
